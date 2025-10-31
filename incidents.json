@@ -1,0 +1,50 @@
+[
+  {
+    "type_general": "FIRE",
+    "dispatch_time": "10/31/2025 2:51 PM",
+    "box_no": "54-10",
+    "type_specific": "WIRES DOWN",
+    "street": "DOLF RD",
+    "cross_street": "",
+    "nearest_intersection": "BLUE BALL RD / POND VIEW LN",
+    "location_township": "EAST HOPEWELL TWP",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "type_general": "FIRE",
+    "dispatch_time": "10/31/2025 2:10 PM",
+    "box_no": "89-508",
+    "type_specific": "VEHICLE FIRE",
+    "street": "SUSQUEHANNA TRL",
+    "cross_street": "",
+    "nearest_intersection": "GWEN DR, LIGHTNER RD / LEXTON DR",
+    "location_township": "MANCHESTER TWP",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "type_general": "TRAFFIC",
+    "dispatch_time": "10/31/2025 2:52 PM",
+    "box_no": "19-831",
+    "type_specific": "MVA W/FD",
+    "street": "",
+    "cross_street": "",
+    "nearest_intersection": "I 83X16BSQUEENST NB, I 83 NB / I 83 NB",
+    "location_township": "",
+    "lat": null,
+    "lng": null
+  },
+  {
+    "type_general": "TRAFFIC",
+    "dispatch_time": "10/31/2025 2:25 PM",
+    "box_no": "09-01",
+    "type_specific": "MVA NO INJURY",
+    "street": "HILTON AVE",
+    "cross_street": "COVINGTON AVE",
+    "nearest_intersection": "",
+    "location_township": "DOVER TWP",
+    "lat": null,
+    "lng": null
+  }
+]

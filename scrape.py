@@ -7,14 +7,14 @@ from geopy.geocoders import Nominatim
 
 def scrape_incidents():
     """
-    Fetches the York County 911 incident page (ycdes.org) and scrapes the main table.
+    Fetches the Richmond, VA active calls page and scrapes the main table.
     Also geocodes the location of each incident.
     """
-    URL = "https://www.ycdes.org/webcad/Default.aspx"
+    URL = "https://apps.richmondgov.com/applications/activecalls/Home/ActiveCalls"
     
     # Initialize geocoder (Nominatim is free, requires a user agent)
     # We add a 1.1 second delay between queries to respect their terms of service.
-    geolocator = Nominatim(user_agent="york_incident_mapper_v1")
+    geolocator = Nominatim(user_agent="richmond_incident_mapper_v1")
     
     # Set headers to mimic a real browser request
     headers = {
@@ -34,65 +34,32 @@ def scrape_incidents():
         # Parse the HTML content
         soup = BeautifulSoup(response.text, 'html.parser')
 
-        # Find the H2 tag with the text "Active Incidents"
-        header = soup.find('h2', string='Active Incidents')
-
-        if not header:
-            print("Error: Could not find the 'Active Incidents' header (H2 tag).", file=sys.stderr)
-            debug_filename = "debug_page.html"
-            try:
-                with open(debug_filename, "w", encoding="utf-8") as f:
-                    f.write(response.text)
-                print(f"--- DEBUG INFO: Saved HTML to '{debug_filename}' for inspection. ---", file=sys.stderr)
-            except Exception as e:
-                print(f"Could not write debug file: {e}", file=sys.stderr)
-            return None
-
-        # Find the *next* table tag immediately following the header
-        table = header.find_next_sibling('table', class_='incidentList')
+        table = soup.find('table')
 
         if not table:
-            print("Error: Found 'Active Incidents' header but could not find the 'incidentList' table immediately after it.", file=sys.stderr)
-            debug_filename = "debug_page.html"
-            try:
-                with open(debug_filename, "w", encoding="utf-8") as f:
-                    f.write(response.text)
-                print(f"--- DEBUG INFO: Saved HTML to '{debug_filename}' for inspection. ---", file=sys.stderr)
-            except Exception as e:
-                print(f"Could not write debug file: {e}", file=sys.stderr)
+            print("Error: Could not find the data table.", file=sys.stderr)
             return None
 
         incidents = []
         
-        # Find all table rows 'tr' in the table body
-        # We skip the first row [1:] because it's the header
         for row in table.find_all('tr')[1:]:
-            # Find all cells 'td' in the current row
             cells = row.find_all('td')
             
-            # Ensure the row has the correct number of cells (at least 8)
-            if len(cells) >= 8:
+            if len(cells) >= 7:
                 incident = {
-                    'type_general': cells[0].text.strip(),
-                    'dispatch_time': cells[1].text.strip(),
+                    'type_general': cells[1].text.strip(),
+                    'dispatch_time': cells[0].text.strip(),
                     'box_no': cells[2].text.strip(),
-                    'type_specific': cells[3].text.strip(),
-                    'street': cells[4].text.strip(),
-                    'cross_street': cells[5].text.strip(),
-                    'nearest_intersection': cells[6].text.strip(),
-                    'location_township': cells[7].text.strip()
+                    'type_specific': cells[4].text.strip(),
+                    'street': cells[5].text.strip(),
+                    'cross_street': '',
+                    'nearest_intersection': '',
+                    'location_township': cells[2].text.strip()
                 }
 
                 # --- Geocoding Step ---
-                # Build a location string for the geocoder.
-                # Use nearest_intersection if available, otherwise fall back to street.
-                loc_str = incident['nearest_intersection']
-                if not loc_str:
-                    loc_str = incident['street']
-                
-                # Add township and state for better accuracy
-                # NOTE: The data (YORK CITY, MANCHESTER TWP) indicates York County, PENNSYLVANIA, not Virginia.
-                full_address = f"{loc_str}, {incident['location_township']}, York County, VA"
+                cleaned_street = incident['street'].replace('-BLK', '00').strip()
+                full_address = f"{cleaned_street}, Richmond, VA"
                 
                 print(f"Geocoding: {full_address}", file=sys.stderr)
                 

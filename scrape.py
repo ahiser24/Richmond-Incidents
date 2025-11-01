@@ -95,6 +95,14 @@ def scrape_incidents():
                 if ' and ' in cleaned_street:
                     # It is. Split it and take just the first street.
                     address_to_geocode = cleaned_street.split(' and ')[0]
+                elif "RICH: @" in cleaned_street and "BETWEEN" in cleaned_street:
+                    # Handle "RICH: @<street> BETWEEN <cross_street_1> & <cross_street_2>"
+                    try:
+                        main_street = cleaned_street.split('@')[1].split('BETWEEN')[0].strip()
+                        main_street = re.sub(r'\s(NB|SB)$', '', main_street) # Remove NB/SB
+                        address_to_geocode = main_street
+                    except IndexError:
+                        address_to_geocode = cleaned_street # Fallback
                 else:
                     # It's a block or regular address
                     address_to_geocode = cleaned_street

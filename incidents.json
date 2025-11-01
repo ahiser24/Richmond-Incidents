@@ -79,19 +79,6 @@
   },
   {
     "type_general": "RPD",
-    "dispatch_time": "11/01/2025 09:00",
-    "box_no": "Precinct 4",
-    "type_specific": "DOMESTIC TROUBLE , INVESTIGATE",
-    "street": "1700-BLK 3RD AVE",
-    "status": "Arrived",
-    "cross_street": "",
-    "nearest_intersection": "1st Avenue",
-    "location_township": "Precinct 4",
-    "lat": 37.557759,
-    "lng": -77.426319
-  },
-  {
-    "type_general": "RPD",
     "dispatch_time": "11/01/2025 09:10",
     "box_no": "Precinct 1",
     "type_specific": "DRUG/NARCOTICS OFFENSE , INVESTIGATE / OUTSIDE",
@@ -196,32 +183,6 @@
   },
   {
     "type_general": "RPD",
-    "dispatch_time": "11/01/2025 10:40",
-    "box_no": "Precinct 4",
-    "type_specific": "TRAFFIC STOP , OFFICER-INITIATED",
-    "street": "200-BLK S BELVIDERE ST",
-    "status": "Dispatched",
-    "cross_street": "",
-    "nearest_intersection": "Floyd Avenue",
-    "location_township": "Precinct 4",
-    "lat": 37.5450741,
-    "lng": -77.4489075
-  },
-  {
-    "type_general": "RPD",
-    "dispatch_time": "11/01/2025 10:40",
-    "box_no": "Precinct 4",
-    "type_specific": "TRAFFIC STOP , OFFICER-INITIATED",
-    "street": "200-BLK S BELVIDERE ST",
-    "status": "Arrived",
-    "cross_street": "",
-    "nearest_intersection": "Floyd Avenue",
-    "location_township": "Precinct 4",
-    "lat": 37.5450741,
-    "lng": -77.4489075
-  },
-  {
-    "type_general": "RPD",
     "dispatch_time": "11/01/2025 10:43",
     "box_no": "Precinct 4",
     "type_specific": "TRESPASSING , INVESTIGATE",
@@ -239,7 +200,7 @@
     "box_no": "Precinct 3",
     "type_specific": "CRASH , PERSONAL INJURY",
     "street": "FOREST HILL AVE/JOE BROOKS BLVD RICH",
-    "status": "Enroute",
+    "status": "Arrived",
     "cross_street": "",
     "nearest_intersection": "Forest Hill Avenue",
     "location_township": "Precinct 3",
@@ -260,6 +221,32 @@
     "lng": -77.4561674
   },
   {
+    "type_general": "RPD",
+    "dispatch_time": "11/01/2025 10:56",
+    "box_no": "Precinct 4",
+    "type_specific": "RANDOM GUNFIRE , INVESTIGATE",
+    "street": "3600-BLK FLORIDA AVE",
+    "status": "Dispatched",
+    "cross_street": "",
+    "nearest_intersection": "Florida Avenue",
+    "location_township": "Precinct 4",
+    "lat": 37.5806025,
+    "lng": -77.4191028
+  },
+  {
+    "type_general": "RPD",
+    "dispatch_time": "11/01/2025 10:58",
+    "box_no": "Precinct 3",
+    "type_specific": "CRASH , PROPERTY DAMAGE",
+    "street": "N ARTHUR ASHE BLVD/GROVE AVE RICH",
+    "status": "Arrived",
+    "cross_street": "",
+    "nearest_intersection": "North Arthur Ashe Boulevard",
+    "location_township": "Precinct 3",
+    "lat": 37.5748547,
+    "lng": -77.4635584
+  },
+  {
     "type_general": "RFD",
     "dispatch_time": "11/01/2025 10:31",
     "box_no": "FIRE",
@@ -271,5 +258,31 @@
     "location_township": "FIRE",
     "lat": 37.5036311,
     "lng": -77.5151182
+  },
+  {
+    "type_general": "RFD",
+    "dispatch_time": "11/01/2025 10:57",
+    "box_no": "FIRE",
+    "type_specific": "# EMS - 1ST RESP CALL (FIRE RESP ONLY) , HEART PROBLEM",
+    "street": "3500-BLK FOREST HAVEN DR",
+    "status": "Arrived",
+    "cross_street": "",
+    "nearest_intersection": "Forest Haven Drive",
+    "location_township": "FIRE",
+    "lat": 37.4664743,
+    "lng": -77.4882574
+  },
+  {
+    "type_general": "RFD",
+    "dispatch_time": "11/01/2025 10:59",
+    "box_no": "FIRE",
+    "type_specific": "# EMS - 1ST RESP CALL (FIRE RESP ONLY) , BREATHING PROBLEM",
+    "street": "4000-BLK OLD BROOK RD",
+    "status": "Arrived",
+    "cross_street": "",
+    "nearest_intersection": "Old Brook Road",
+    "location_township": "FIRE",
+    "lat": 37.589166,
+    "lng": -77.446522
   }
 ]

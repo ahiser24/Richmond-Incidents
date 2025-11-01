@@ -34,8 +34,8 @@ jobs:
       # 5. Commits the new incidents.json back to your repository
       - name: Commit updated incidents.json
         run: |
-          git config --global ahiser24 'GitHub Actions Bot'
-          git config --global andrewthiser@gmail.com 'actions@github.com'
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
           git add incidents.json
           # Only commit if there are actual changes
           git diff --staged --quiet || git commit -m "Update incidents.json"

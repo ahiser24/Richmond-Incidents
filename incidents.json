@@ -6,7 +6,7 @@
     "type_specific": "MENTAL SUBJECT , TDO / ECO",
     "street": "7100-BLK JAHNKE RD",
     "cross_street": "",
-    "nearest_intersection": "",
+    "nearest_intersection": "Jahnke Road",
     "location_township": "Precinct 2",
     "lat": 37.516009,
     "lng": -77.525109
@@ -18,7 +18,7 @@
     "type_specific": "CRASH , PERSONAL INJURY",
     "street": "RICH: @POWHITE PKWY NB BETWEEN DOUGLASDALE RD & I195 NB",
     "cross_street": "",
-    "nearest_intersection": "",
+    "nearest_intersection": "Powhite Parkway",
     "location_township": "Precinct 3",
     "lat": 37.5411754,
     "lng": -77.4932097
@@ -30,7 +30,7 @@
     "type_specific": "MENTAL SUBJECT , TDO / ECO",
     "street": "1200-BLK E MARSHALL ST",
     "cross_street": "",
-    "nearest_intersection": "",
+    "nearest_intersection": "East Marshall Street",
     "location_township": "Precinct 4",
     "lat": 37.5404297,
     "lng": -77.4303132
@@ -42,7 +42,7 @@
     "type_specific": "MISSING PERSON , TAKE A REPORT (Field Unit Required",
     "street": "2200-BLK E BROAD ST",
     "cross_street": "",
-    "nearest_intersection": "",
+    "nearest_intersection": "East Broad Street",
     "location_township": "Precinct 1",
     "lat": 37.5332462,
     "lng": -77.4211989
@@ -54,7 +54,7 @@
     "type_specific": "D.O.A. , INVESTIGATE",
     "street": "300-BLK W CHARITY ST",
     "cross_street": "",
-    "nearest_intersection": "",
+    "nearest_intersection": "West Charity Street",
     "location_township": "Precinct 4",
     "lat": 37.5525386,
     "lng": -77.4393965
@@ -66,22 +66,10 @@
     "type_specific": "STOLEN VEHICLE , DPR Call - Take a Report",
     "street": "200-BLK E CARY ST",
     "cross_street": "",
-    "nearest_intersection": "",
+    "nearest_intersection": "East Cary Street",
     "location_township": "DPR",
     "lat": 37.5411631,
     "lng": -77.443185
-  },
-  {
-    "type_general": "RPD",
-    "dispatch_time": "11/01/2025 08:24",
-    "box_no": "Precinct 1",
-    "type_specific": "LARCENY , TAKE A REPORT (Field Unit Required)",
-    "street": "N 23RD ST/M ST RICH",
-    "cross_street": "",
-    "nearest_intersection": "",
-    "location_township": "Precinct 1",
-    "lat": 37.5436083,
-    "lng": -77.4102526
   },
   {
     "type_general": "RPD",
@@ -90,7 +78,7 @@
     "type_specific": "ASSAULT , INVESTIGATE-EMS",
     "street": "2100-BLK SEMMES AVE",
     "cross_street": "",
-    "nearest_intersection": "",
+    "nearest_intersection": "Semmes Avenue",
     "location_township": "Precinct 3",
     "lat": 37.5215929,
     "lng": -77.4545457
@@ -102,7 +90,7 @@
     "type_specific": "DISORDERLY , AGGRESSIVE",
     "street": "2100-BLK KIMROD RD",
     "cross_street": "",
-    "nearest_intersection": "",
+    "nearest_intersection": "Kimrod Road",
     "location_township": "Precinct 2",
     "lat": 37.4835724,
     "lng": -77.4993089
@@ -114,7 +102,7 @@
     "type_specific": "BREAK & ENTER , JUST OCCURRED / IN-PROGRESS",
     "street": "0-BLK N 23RD ST",
     "cross_street": "",
-    "nearest_intersection": "",
+    "nearest_intersection": "North 23rd Street",
     "location_township": "Precinct 1",
     "lat": 37.5436083,
     "lng": -77.4102526
@@ -126,7 +114,7 @@
     "type_specific": "DRUG/NARCOTICS OFFENSE , INVESTIGATE / OUTSIDE",
     "street": "1100-BLK E MAIN ST",
     "cross_street": "",
-    "nearest_intersection": "",
+    "nearest_intersection": "East Main Street",
     "location_township": "Precinct 1",
     "lat": 37.5372662,
     "lng": -77.4345287
@@ -138,10 +126,22 @@
     "type_specific": "ASSIST - OTHER AGENCY OR CALLER , CITIZEN",
     "street": "2500-BLK Q ST",
     "cross_street": "",
-    "nearest_intersection": "",
+    "nearest_intersection": "Q Street, East End",
     "location_township": "Precinct 1",
     "lat": 37.538495,
     "lng": -77.4120703
+  },
+  {
+    "type_general": "RPD",
+    "dispatch_time": "11/01/2025 09:21",
+    "box_no": "Precinct 1",
+    "type_specific": "WIRES DOWN (NO FIRE) , INVESTIGATE",
+    "street": "DOCK ST/E MAIN ST RICH",
+    "cross_street": "",
+    "nearest_intersection": "Dock Street",
+    "location_township": "Precinct 1",
+    "lat": 37.5292009,
+    "lng": -77.4245052
   },
   {
     "type_general": "RPD",
@@ -150,7 +150,7 @@
     "type_specific": "TRESPASSING , INVESTIGATE",
     "street": "N 1ST ST/E MARSHALL ST RICH",
     "cross_street": "",
-    "nearest_intersection": "",
+    "nearest_intersection": "North 1st Street",
     "location_township": "Precinct 4",
     "lat": 37.5553171,
     "lng": -77.4314859
@@ -162,7 +162,7 @@
     "type_specific": "CRASH , PROPERTY DAMAGE",
     "street": "DOUGLASDALE/MCCLOY RICH",
     "cross_street": "",
-    "nearest_intersection": "",
+    "nearest_intersection": "Douglasdale Road",
     "location_township": "Precinct 3",
     "lat": 37.5465792,
     "lng": -77.4899874
@@ -174,9 +174,57 @@
     "type_specific": "PARKING COMPLAINT , INVESTIGATE",
     "street": "00-BLK S BRUNSWICK ST",
     "cross_street": "",
-    "nearest_intersection": "",
+    "nearest_intersection": "South Brunswick Street",
     "location_township": "Precinct 3",
     "lat": 37.5455837,
     "lng": -77.4575417
+  },
+  {
+    "type_general": "RPD",
+    "dispatch_time": "11/01/2025 09:29",
+    "box_no": "Precinct 1",
+    "type_specific": "TRESPASSING , INVESTIGATE",
+    "street": "2500-BLK FAIRFIELD AVE",
+    "cross_street": "",
+    "nearest_intersection": "Fairfield Avenue",
+    "location_township": "Precinct 1",
+    "lat": 37.5480734,
+    "lng": -77.4027617
+  },
+  {
+    "type_general": "RFD",
+    "dispatch_time": "11/01/2025 09:32",
+    "box_no": "FIRE",
+    "type_specific": "# SERVICE CALL , PUBLIC-ASSIST",
+    "street": "800-BLK OLD DENNY ST",
+    "cross_street": "",
+    "nearest_intersection": "Old Denny Street",
+    "location_township": "FIRE",
+    "lat": 37.5200093,
+    "lng": -77.4082698
+  },
+  {
+    "type_general": "RFD",
+    "dispatch_time": "11/01/2025 09:32",
+    "box_no": "FIRE",
+    "type_specific": "# SERVICE CALL , PUBLIC-ASSIST",
+    "street": "800-BLK OLD DENNY ST",
+    "cross_street": "",
+    "nearest_intersection": "Old Denny Street",
+    "location_township": "FIRE",
+    "lat": 37.5200093,
+    "lng": -77.4082698
+  },
+  {
+    "type_general": "RFD",
+    "dispatch_time": "11/01/2025 09:39",
+    "box_no": "FIRE",
+    "type_specific": "# EMS - 1ST RESP CALL (FIRE RESP ONLY) , UNKNOWN PROBLEM/PERSON DOWN",
+    "street": "W BAKER ST/CHAMBERLAYNE PKWY RICH",
+    "cross_street": "",
+    "nearest_intersection": "West Baker Street",
+    "location_township": "FIRE",
+    "lat": 37.5514222,
+    "lng": -77.4389372
   }
 ]

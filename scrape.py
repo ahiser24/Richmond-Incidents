@@ -6,6 +6,45 @@ import time
 from geopy.geocoders import Nominatim
 import re
 
+def get_nearest_intersection(lat, lon, geolocator):
+    """
+    Finds the nearest intersection to a given lat/lon pair using reverse geocoding.
+    Note: Nominatim is not always precise with intersections. This is a best-effort attempt.
+    """
+    if lat is None or lon is None:
+        return ""
+
+    try:
+        # Perform a reverse geocode lookup. language=en ensures we get English results.
+        location = geolocator.reverse((lat, lon), exactly_one=True, language='en', timeout=5)
+
+        if location and location.raw and 'address' in location.raw:
+            address = location.raw['address']
+
+            # Nominatim may return 'road', 'street', 'pedestrian', etc.
+            road = address.get('road') or address.get('street') or address.get('pedestrian', '')
+
+            # Sometimes a suburb or neighborhood is more useful if a road isn't found
+            suburb = address.get('suburb', '')
+
+            # Heuristic: Check if the returned address looks like an intersection
+            # This is not foolproof with Nominatim.
+            if road and ('&' in road or '/' in road):
+                return road
+
+            # Fallback: Construct a string with what we have
+            if road and suburb:
+                return f"{road}, {suburb}"
+            elif road:
+                return road
+            elif suburb:
+                return suburb
+        return ""
+
+    except Exception as e:
+        print(f"-> Reverse Geocoding Error: {e}", file=sys.stderr)
+        return ""
+
 def scrape_incidents():
     """
     Fetches the Richmond, VA active calls page and scrapes the main table.
@@ -80,6 +119,15 @@ def scrape_incidents():
                             incident['lng'] = dms_to_dd(lon_dms)
                             incident['lat'] = dms_to_dd(lat_dms)
                             print(f"-> Parsed from LL: ({incident['lat']}, {incident['lng']})", file=sys.stderr)
+
+                            # --- Reverse Geocode for Intersection ---
+                            intersection = get_nearest_intersection(incident['lat'], incident['lng'], geolocator)
+                            if intersection:
+                                incident['nearest_intersection'] = intersection
+                                print(f"-> Nearest Intersection: {intersection}", file=sys.stderr)
+                            else:
+                                print("-> No intersection found.", file=sys.stderr)
+
                         except (ValueError, IndexError):
                              print(f"-> Warning: Could not parse LL address: {cleaned_street}", file=sys.stderr)
                              incident['lat'] = None
@@ -119,6 +167,15 @@ def scrape_incidents():
                         incident['lat'] = location.latitude
                         incident['lng'] = location.longitude
                         print(f"-> Found: ({location.latitude}, {location.longitude})", file=sys.stderr)
+
+                        # --- Reverse Geocode for Intersection ---
+                        intersection = get_nearest_intersection(incident['lat'], incident['lng'], geolocator)
+                        if intersection:
+                            incident['nearest_intersection'] = intersection
+                            print(f"-> Nearest Intersection: {intersection}", file=sys.stderr)
+                        else:
+                            print("-> No intersection found.", file=sys.stderr)
+
                     else:
                         incident['lat'] = None
                         incident['lng'] = None

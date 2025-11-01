@@ -92,6 +92,7 @@ def scrape_incidents():
                     'box_no': cells[2].text.strip(),
                     'type_specific': cells[4].text.strip(),
                     'street': cells[5].text.strip(),
+                    'status': cells[6].text.strip(),
                     'cross_street': '',
                     'nearest_intersection': '',
                     'location_township': cells[2].text.strip()

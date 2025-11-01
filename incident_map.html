@@ -144,7 +144,8 @@
                         <b>Location:</b> ${incident.street || 'N/A'}<br>
                         <b>Intersection:</b> ${incident.nearest_intersection || 'N/A'}<br>
                         <b>Township:</b> ${incident.location_township}<br>
-                        <b>Dispatched:</b> ${incident.dispatch_time}
+                        <b>Dispatched:</b> ${incident.dispatch_time}<br>
+                        <b>Status:</b> ${incident.status || 'N/A'}
                     `;
 
                     // Create a circle marker

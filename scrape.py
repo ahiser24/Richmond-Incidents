@@ -54,6 +54,7 @@ def scrape_incidents():
                     'type_specific': cells[4].text.strip(),
                     'street': cells[5].text.strip(),
                     'cross_street': '',
+                    'nearest_intersection': '',
                     'location_township': cells[2].text.strip()
                 }
 

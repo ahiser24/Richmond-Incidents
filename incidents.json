@@ -183,6 +183,19 @@
   },
   {
     "type_general": "RPD",
+    "dispatch_time": "11/01/2025 10:42",
+    "box_no": "Precinct 4",
+    "type_specific": "PARKING COMPLAINT , INVESTIGATE",
+    "street": "1200-BLK W MARSHALL ST",
+    "status": "Enroute",
+    "cross_street": "",
+    "nearest_intersection": "West Marshall Street",
+    "location_township": "Precinct 4",
+    "lat": 37.5534446,
+    "lng": -77.4517198
+  },
+  {
+    "type_general": "RPD",
     "dispatch_time": "11/01/2025 10:43",
     "box_no": "Precinct 4",
     "type_specific": "TRESPASSING , INVESTIGATE",
@@ -226,12 +239,25 @@
     "box_no": "Precinct 4",
     "type_specific": "RANDOM GUNFIRE , INVESTIGATE",
     "street": "3600-BLK FLORIDA AVE",
-    "status": "Dispatched",
+    "status": "Arrived",
     "cross_street": "",
     "nearest_intersection": "Florida Avenue",
     "location_township": "Precinct 4",
     "lat": 37.5806025,
     "lng": -77.4191028
+  },
+  {
+    "type_general": "RPD",
+    "dispatch_time": "11/01/2025 10:57",
+    "box_no": "Precinct 4",
+    "type_specific": "BURGLAR ALARM , INVESTIGATE",
+    "street": "700-BLK E BROAD ST",
+    "status": "Enroute",
+    "cross_street": "",
+    "nearest_intersection": "East Broad Street",
+    "location_township": "Precinct 4",
+    "lat": 37.5419283,
+    "lng": -77.4353683
   },
   {
     "type_general": "RPD",
@@ -245,6 +271,19 @@
     "location_township": "Precinct 3",
     "lat": 37.5748547,
     "lng": -77.4635584
+  },
+  {
+    "type_general": "RPD",
+    "dispatch_time": "11/01/2025 10:58",
+    "box_no": "Precinct 4",
+    "type_specific": "DISABLE VEHICLE - HAZARD , INVESTIGATE",
+    "street": "W BROAD ST/N BELVIDERE ST RICH",
+    "status": "Arrived",
+    "cross_street": "",
+    "nearest_intersection": "West Broad Street",
+    "location_township": "Precinct 4",
+    "lat": 37.5667607,
+    "lng": -77.475537
   },
   {
     "type_general": "RFD",
@@ -261,19 +300,6 @@
   },
   {
     "type_general": "RFD",
-    "dispatch_time": "11/01/2025 10:57",
-    "box_no": "FIRE",
-    "type_specific": "# EMS - 1ST RESP CALL (FIRE RESP ONLY) , HEART PROBLEM",
-    "street": "3500-BLK FOREST HAVEN DR",
-    "status": "Arrived",
-    "cross_street": "",
-    "nearest_intersection": "Forest Haven Drive",
-    "location_township": "FIRE",
-    "lat": 37.4664743,
-    "lng": -77.4882574
-  },
-  {
-    "type_general": "RFD",
     "dispatch_time": "11/01/2025 10:59",
     "box_no": "FIRE",
     "type_specific": "# EMS - 1ST RESP CALL (FIRE RESP ONLY) , BREATHING PROBLEM",
@@ -284,5 +310,18 @@
     "location_township": "FIRE",
     "lat": 37.589166,
     "lng": -77.446522
+  },
+  {
+    "type_general": "RFD",
+    "dispatch_time": "11/01/2025 11:02",
+    "box_no": "FIRE",
+    "type_specific": "# EMS - 1ST RESP CALL (FIRE RESP ONLY) , UNCONSCIOUSNESS/FAINTING",
+    "street": "2400-BLK CARMINE ST",
+    "status": "Arrived",
+    "cross_street": "",
+    "nearest_intersection": "Carmine Street",
+    "location_township": "FIRE",
+    "lat": 37.5562698,
+    "lng": -77.4167992
   }
 ]

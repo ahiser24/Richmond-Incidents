@@ -1,0 +1,42 @@
+name: Scrape Active Calls
+
+on:
+  workflow_dispatch: # Allows you to run it manually
+  schedule:
+    # Runs "at every 5th minute"
+    - cron: "*/5 * * * *"
+
+jobs:
+  scrape-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Checks out your repository's code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Sets up the Python environment
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10" # Or whatever version you use
+
+      # 3. Installs your script's dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # 4. Runs your Python script to create/update incidents.json
+      - name: Run scraper
+        run: |
+          python scrape.py
+
+      # 5. Commits the new incidents.json back to your repository
+      - name: Commit updated incidents.json
+        run: |
+          git config --global ahiser24 'GitHub Actions Bot'
+          git config --global andrewthiser@gmail.com 'actions@github.com'
+          git add incidents.json
+          # Only commit if there are actual changes
+          git diff --staged --quiet || git commit -m "Update incidents.json"
+          git push

@@ -4,6 +4,7 @@ import json
 import sys
 import time
 from geopy.geocoders import Nominatim
+import re
 
 def scrape_incidents():
     """
@@ -58,7 +59,38 @@ def scrape_incidents():
                 }
 
                 # --- Geocoding Step ---
-                cleaned_street = incident['street'].replace('-BLK', '').replace('/', ' and ').replace(' RICH', '').strip()
+                cleaned_street = incident['street'].replace('-BLK', '').replace('/', ' and ')
+                cleaned_street = re.sub(r'\s+RICH$', '', cleaned_street).strip()
+
+                # --- Handle pre-geocoded LL(...) addresses ---
+                if cleaned_street.startswith('LL('):
+                    match = re.search(r'LL\(([^,]+),([^)]+)\)', cleaned_street)
+                    if match:
+                        lon_dms = match.group(1).strip()
+                        lat_dms = match.group(2).strip()
+
+                        def dms_to_dd(dms):
+                            parts = [float(p) for p in dms.split(':')]
+                            dd = abs(parts[0]) + parts[1]/60 + parts[2]/3600
+                            if parts[0] < 0:
+                                return -dd
+                            return dd
+                        
+                        try:
+                            incident['lng'] = dms_to_dd(lon_dms)
+                            incident['lat'] = dms_to_dd(lat_dms)
+                            print(f"-> Parsed from LL: ({incident['lat']}, {incident['lng']})", file=sys.stderr)
+                        except (ValueError, IndexError):
+                             print(f"-> Warning: Could not parse LL address: {cleaned_street}", file=sys.stderr)
+                             incident['lat'] = None
+                             incident['lng'] = None
+                    else:
+                        print(f"-> Warning: Could not parse LL address: {cleaned_street}", file=sys.stderr)
+                        incident['lat'] = None
+                        incident['lng'] = None
+                    
+                    incidents.append(incident)
+                    continue # Skip Nominatim geocoding
 
                 # Check if it's an intersection
                 if ' and ' in cleaned_street:

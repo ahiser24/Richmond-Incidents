@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>York County, VA - Live Incident Map</title>
+    <title>Richmond, VA - Live Incident Map</title>
     
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -67,7 +67,7 @@
 <body>
 
     <header>
-        <h1>York County, VA - Live Incident Map</h1>
+        <h1>Richmond, VA - Live Incident Map</h1>
         <div id="status">Loading...</div>
     </header>
 
@@ -76,8 +76,8 @@
 
     <script>
         // --- Map Initialization ---
-        // Centered on York County, VA (approximate centroid)
-        const map = L.map('map').setView([37.13, -76.26], 10);
+        // Centered on Richmond, VA (approximate centroid)
+        const map = L.map('map').setView([37.54, -77.43], 10);
         const incidentLayer = L.layerGroup().addTo(map);
 
         // Add the OpenStreetMap tile layer (the map background)

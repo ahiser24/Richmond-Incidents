@@ -58,9 +58,19 @@ def scrape_incidents():
                 }
 
                 # --- Geocoding Step ---
-                cleaned_street = incident['street'].replace('-BLK', '00').strip()
-                full_address = f"{cleaned_street}, Richmond, VA"
-                
+                cleaned_street = incident['street'].replace('-BLK', '').replace('/', ' and ').replace(' RICH', '').strip()
+
+                # Check if it's an intersection
+                if ' and ' in cleaned_street:
+                    # It is. Split it and take just the first street.
+                    address_to_geocode = cleaned_street.split(' and ')[0]
+                else:
+                    # It's a block or regular address
+                    address_to_geocode = cleaned_street
+
+                # Now, add the city and state
+                full_address = f"{address_to_geocode}, Richmond, VA"
+
                 print(f"Geocoding: {full_address}", file=sys.stderr)
                 
                 try:
